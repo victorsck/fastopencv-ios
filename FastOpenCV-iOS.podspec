@@ -67,13 +67,13 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios
 
-  s.preserve_paths = 'opencv2.framework'
+  s.preserve_paths = 'opencv2.xcframework'
   
-  s.source_files = 'opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
+  s.source_files = 'opencv2.xcframework/*/Versions/A/Headers/**/*{.h,.hpp}'
   
-  s.public_header_files = 'opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
+  s.public_header_files = 'opencv2.framework/*/Versions/A/Headers/**/*{.h,.hpp}'
   s.header_dir = 'opencv2'
-  s.header_mappings_dir = 'opencv2.framework/Versions/A/Headers/'
+  s.header_mappings_dir = 'opencv2.framework/*/Versions/A/Headers/'
   
   s.libraries    = 'c++', 'stdc++'  
   s.frameworks = 'opencv2', 'Accelerate', 'AssetsLibrary', 'AVFoundation', 'CoreGraphics', 'CoreImage', 'CoreMedia', 'CoreVideo', 'Foundation', 'QuartzCore', 'UIKit'
