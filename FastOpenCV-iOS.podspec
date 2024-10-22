@@ -73,7 +73,7 @@ Pod::Spec.new do |s|
   
   s.public_header_files = 'opencv2.xcframework/*/opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
   s.header_dir = 'opencv2'
-  s.header_mappings_dir = 'opencv2.xcframework/*/opencv2.framework/Versions/A/Headers'
+  # s.header_mappings_dir = 'opencv2.xcframework/*/opencv2.framework/Versions/A/Headers'
   
   s.libraries    = 'c++', 'stdc++'  
   s.frameworks = 'opencv2', 'Accelerate', 'AssetsLibrary', 'AVFoundation', 'CoreGraphics', 'CoreImage', 'CoreMedia', 'CoreVideo', 'Foundation', 'QuartzCore', 'UIKit'
