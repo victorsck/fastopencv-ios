@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FastOpenCV-iOS"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "OpenCV (Computer Vision) for iOS."
   s.homepage     = "https://github.com/lukaszkurantdev/fastopencv-ios.git"
   s.description  = <<-DESC
@@ -82,7 +82,7 @@ Pod::Spec.new do |s|
     "UIKit"
 	]
 
-  s.libraries = "c++"
+  s.libraries = "c++", "stdc++"
   s.pod_target_xcconfig = {
       "CLANG_CXX_LANGUAGE_STANDARD" => "c++17",
       "CLANG_CXX_LIBRARY" => "libc++",
