@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
   s.author       = "opencv.org"
 
   s.source       = { 
-    :git => "https://github.com/lukaszkurantdev/fastopencv-ios", 
+    :git => "https://github.com/lukaszkurantdev/fastopencv-ios.git", 
     :tag => "#{s.version}"
   }
 
