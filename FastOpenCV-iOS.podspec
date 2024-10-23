@@ -66,6 +66,7 @@ Pod::Spec.new do |s|
   }
 
   s.platform     = :ios
+  s.ios.deployment_target = "13.0"
 
   # s.preserve_paths = 'opencv2.xcframework'
   
@@ -98,7 +99,4 @@ Pod::Spec.new do |s|
       "CLANG_CXX_LANGUAGE_STANDARD" => "c++17",
       "CLANG_CXX_LIBRARY" => "libc++",
   }
-
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
