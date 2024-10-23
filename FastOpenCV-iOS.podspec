@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name         = "FastOpenCV-iOS"
   s.version      = "0.1.0"
   s.summary      = "OpenCV (Computer Vision) for iOS."
-  s.homepage     = "https://github.com/lukaszkurantdev/fastopencv-ios"
+  s.homepage     = "http://github.com/lukaszkurantdev/fastopencv-ios.git"
   s.description  = <<-DESC
     OpenCV: open source computer vision library
 
@@ -61,24 +61,12 @@ Pod::Spec.new do |s|
   s.author       = "opencv.org"
 
   s.source       = { 
-    :git => "https://github.com/lukaszkurantdev/fastopencv-ios.git", 
+    :git => "http://github.com/lukaszkurantdev/fastopencv-ios.git", 
     :tag => "#{s.version}"
   }
 
   s.platform     = :ios
   s.ios.deployment_target = "13.0"
-
-  # s.preserve_paths = 'opencv2.xcframework'
-  
-  # s.source_files = 'opencv2.xcframework/*/opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
-  
-  # s.public_header_files = 'opencv2.xcframework/*/opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
-  # s.header_dir = 'opencv2'
-  # # s.header_mappings_dir = 'opencv2.xcframework/'
-  
-  # s.libraries    = 'c++', 'stdc++'  
-  # s.frameworks = 'opencv2', 'Accelerate', 'AssetsLibrary', 'AVFoundation', 'CoreGraphics', 'CoreImage', 'CoreMedia', 'CoreVideo', 'Foundation', 'QuartzCore', 'UIKit'
-  # s.xcconfig = {'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/FastOpenCV-iOS', 'OTHER_LDFLAGS' => '-all_load'}
 
   s.preserve_paths = "opencv2.xcframework"
   s.vendored_frameworks = "opencv2.xcframework"
