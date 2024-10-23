@@ -61,21 +61,42 @@ Pod::Spec.new do |s|
   s.author       = "opencv.org"
 
   s.source       = { 
-    :git => "https://github.com/lukaszkurantdev/fastopencv-ios", 
+    :git => "https://github.com/lukaszkurantdev/fastopencv-ios.git", 
     :tag => "#{s.version}"
   }
 
   s.platform     = :ios
+  s.ios.deployment_target = "13.0"
 
-  s.preserve_paths = 'opencv2.framework'
+  # s.preserve_paths = 'opencv2.xcframework'
   
-  s.source_files = 'opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
+  # s.source_files = 'opencv2.xcframework/*/opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
   
-  s.public_header_files = 'opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
-  s.header_dir = 'opencv2'
-  s.header_mappings_dir = 'opencv2.framework/Versions/A/Headers/'
+  # s.public_header_files = 'opencv2.xcframework/*/opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
+  # s.header_dir = 'opencv2'
+  # # s.header_mappings_dir = 'opencv2.xcframework/'
   
-  s.libraries    = 'c++', 'stdc++'  
-  s.frameworks = 'opencv2', 'Accelerate', 'AssetsLibrary', 'AVFoundation', 'CoreGraphics', 'CoreImage', 'CoreMedia', 'CoreVideo', 'Foundation', 'QuartzCore', 'UIKit'
-  s.xcconfig = {'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/OpenCV', 'OTHER_LDFLAGS' => '-all_load'}
+  # s.libraries    = 'c++', 'stdc++'  
+  # s.frameworks = 'opencv2', 'Accelerate', 'AssetsLibrary', 'AVFoundation', 'CoreGraphics', 'CoreImage', 'CoreMedia', 'CoreVideo', 'Foundation', 'QuartzCore', 'UIKit'
+  # s.xcconfig = {'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/FastOpenCV-iOS', 'OTHER_LDFLAGS' => '-all_load'}
+
+  s.preserve_paths = "opencv2.xcframework"
+  s.vendored_frameworks = "opencv2.xcframework"
+  s.requires_arc = false
+	s.ios.frameworks = [
+    "AssetsLibrary",
+    "AVFoundation",
+    "CoreGraphics",
+    "CoreMedia",
+    "CoreVideo",
+    "Foundation",
+    "QuartzCore",
+    "UIKit"
+	]
+
+  s.libraries = "c++"
+  s.pod_target_xcconfig = {
+      "CLANG_CXX_LANGUAGE_STANDARD" => "c++17",
+      "CLANG_CXX_LIBRARY" => "libc++",
+  }
 end
