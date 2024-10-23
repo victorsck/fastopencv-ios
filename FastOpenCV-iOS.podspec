@@ -67,15 +67,33 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios
 
-  s.preserve_paths = 'opencv2.xcframework'
+  # s.preserve_paths = 'opencv2.framework'
+  # s.source_files = 'opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
+  # s.public_header_files = 'opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
+  # s.header_dir = 'opencv2'
+  # s.header_mappings_dir = 'opencv2.framework/Versions/A/Headers/'
   
-  s.source_files = 'opencv2.xcframework/*/opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
-  
-  s.public_header_files = 'opencv2.xcframework/*/opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
-  s.header_dir = 'opencv2'
-  # s.header_mappings_dir = 'opencv2.xcframework/'
-  
-  s.libraries    = 'c++', 'stdc++'  
-  s.frameworks = 'opencv2', 'Accelerate', 'AssetsLibrary', 'AVFoundation', 'CoreGraphics', 'CoreImage', 'CoreMedia', 'CoreVideo', 'Foundation', 'QuartzCore', 'UIKit'
-  s.xcconfig = {'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/FastOpenCV-iOS', 'OTHER_LDFLAGS' => '-all_load'}
+  # s.libraries    = 'c++', 'stdc++'  
+  # s.frameworks = 'opencv2', 'Accelerate', 'AssetsLibrary', 'AVFoundation', 'CoreGraphics', 'CoreImage', 'CoreMedia', 'CoreVideo', 'Foundation', 'QuartzCore', 'UIKit'
+  # s.xcconfig = {'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/FastOpenCV-iOS', 'OTHER_LDFLAGS' => '-all_load'}
+
+  spec.preserve_paths = "opencv2.xcframework"
+  spec.vendored_frameworks = "opencv2.xcframework"
+  spec.requires_arc = false
+	spec.ios.frameworks = [
+    "AssetsLibrary",
+    "AVFoundation",
+    "CoreGraphics",
+    "CoreMedia",
+    "CoreVideo",
+    "Foundation",
+    "QuartzCore",
+    "UIKit"
+	]
+
+  spec.libraries = "c++"
+  spec.pod_target_xcconfig = {
+      "CLANG_CXX_LANGUAGE_STANDARD" => "c++17",
+      "CLANG_CXX_LIBRARY" => "libc++",
+  }
 end
