@@ -61,7 +61,8 @@
 #endif
 
 #if !defined(OPENCV_DISABLE_EIGEN_TENSOR_SUPPORT)
-#if EIGEN_WORLD_VERSION == 3 && EIGEN_MAJOR_VERSION >= 3
+#if EIGEN_WORLD_VERSION == 3 && EIGEN_MAJOR_VERSION >= 3 \
+    && defined(CV_CXX11) && defined(CV_CXX_STD_ARRAY)
 #include <unsupported/Eigen/CXX11/Tensor>
 #define OPENCV_EIGEN_TENSOR_SUPPORT 1
 #endif  // EIGEN_WORLD_VERSION == 3 && EIGEN_MAJOR_VERSION >= 3

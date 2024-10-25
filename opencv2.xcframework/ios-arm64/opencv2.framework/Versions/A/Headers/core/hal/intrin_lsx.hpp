@@ -860,7 +860,6 @@ class v_lsx_palignr_u8_class<imm, false, true, false, false, false>
 public:
     inline __m128i operator()(const __m128i& a, const __m128i& b) const
     {
-        CV_UNUSED(b);
         return a;
     }
 };
@@ -881,7 +880,6 @@ class v_lsx_palignr_u8_class<imm, false, false, false, true, false>
 public:
     inline __m128i operator()(const __m128i& a, const __m128i& b) const
     {
-        CV_UNUSED(a);
         return b;
     }
 };
@@ -2498,7 +2496,7 @@ OPENCV_HAL_IMPL_LSX_LOADSTORE_INTERLEAVE(v_float64x2, double, f64, v_uint64x2, u
 // FP16
 //
 
-inline v_float32x4 v_load_expand(const hfloat* ptr)
+inline v_float32x4 v_load_expand(const float16_t* ptr)
 {
 #if CV_FP16
     return v_float32x4(__lsx_vfcvtl_s_h((__m128)__lsx_vld(ptr, 0)));
@@ -2510,7 +2508,7 @@ inline v_float32x4 v_load_expand(const hfloat* ptr)
 #endif
 }
 
-inline void v_pack_store(hfloat* ptr, const v_float32x4& a)
+inline void v_pack_store(float16_t* ptr, const v_float32x4& a)
 {
 #if CV_FP16
     __m128i res = (__m218i)__lsx_vfcvt_h_s(a.val, a.val);
@@ -2519,7 +2517,7 @@ inline void v_pack_store(hfloat* ptr, const v_float32x4& a)
     float CV_DECL_ALIGNED(32) buf[4];
     v_store_aligned(buf, a);
     for (int i = 0; i < 4; i++)
-        ptr[i] = hfloat(buf[i]);
+        ptr[i] = float16_t(buf[i]);
 #endif
 }
 
