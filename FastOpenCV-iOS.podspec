@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name         = "FastOpenCV-iOS"
-  s.version      = "1.0.4"
+  s.version      = "1.0.4a"
   s.summary      = "OpenCV (Computer Vision) for iOS."
-  s.homepage     = "https://github.com/lukaszkurantdev/fastopencv-ios.git"
+  s.homepage     = "https://github.com/victorsck/fastopencv-ios.git"
   s.description  = <<-DESC
     OpenCV: open source computer vision library
 
@@ -61,15 +61,15 @@ Pod::Spec.new do |s|
   s.author       = "opencv.org"
 
   s.source       = { 
-    :git => "https://github.com/lukaszkurantdev/fastopencv-ios.git", 
+    :git => "https://github.com/victorsck/fastopencv-ios.git", 
     :tag => "#{s.version}"
   }
 
   s.platform     = :ios
-  s.ios.deployment_target = "13.0"
+  s.ios.deployment_target = "15.1"
 
-  s.preserve_paths = "opencv2.xcframework"
-  s.vendored_frameworks = "opencv2.xcframework"
+  s.preserve_paths = "fastopencv.xcframework"
+  s.vendored_frameworks = "fastopencv.xcframework"
   s.requires_arc = false
 	s.ios.frameworks = [
     "AssetsLibrary",
