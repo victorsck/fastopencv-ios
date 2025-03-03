@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "FastOpenCV-iOS"
+  s.name         = "FastOpenCV-M-iOS"
   s.version      = "1.0.4a"
   s.summary      = "OpenCV (Computer Vision) for iOS."
   s.homepage     = "https://github.com/victorsck/fastopencv-ios.git"
